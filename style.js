@@ -22,10 +22,17 @@ function getRandomnumber(){
 
   let printRef;
 
-  // getRandomnumber in the input = '';
-
     displayPin.value = getRandomnumber();
 
+    if (networkSelect.value == "networkSelect" && amountSelected.value == 'amountSelect'){
+      displayPin.value = '';
+      alert('you need to fill all inputs')
+      return
+    }else if (amountSelected.value == 'amountSelect'){
+      alert('please select amount')
+      displayPin.value = "";
+      return
+    }
 
       if (networkSelect.value == "MTN") {
         printRef = `*555*${displayPin.value}#`
