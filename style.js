@@ -24,6 +24,7 @@ function getRandomnumber(){
 
     displayPin.value = getRandomnumber();
 
+    // to stop generating number on empty inputs
     if (networkSelect.value == "networkSelect" && amountSelected.value == 'amountSelect'){
       displayPin.value = '';
       alert('you need to fill all inputs')
@@ -33,6 +34,8 @@ function getRandomnumber(){
       displayPin.value = "";
       return
     }
+
+      // to generate numners based on the network provider
 
       if (networkSelect.value == "MTN") {
         printRef = `*555*${displayPin.value}#`
@@ -48,8 +51,9 @@ function getRandomnumber(){
       }
 
 
-  console.log(displayPin.value);
+  // console.log(displayPin.value);
 
+      // pushing contents into an array to save them in the table
   let netAmount = {net:networkSelect.value, amount:amountSelected.value, pin:displayPin.value, date:(dd+'/'+mm+'/'+yy), printRef:printRef, status:false};
 
   pinGenerated.push(netAmount);
@@ -78,6 +82,13 @@ function save(){
           <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
       </tr>`       
       })
+
+      // to stop random generator number from saving into an array when it is being double clicked
+
+      if (displayPin.value == ''){
+        alert('you need to generate a pin')
+      }
+    
 
 
 }
