@@ -100,9 +100,9 @@ function rechargee(){
       if (rechargePin.value === load.printRef) {
         alert('Yes!!! I am recharged successful');
         // check if card status is used (true)
-        if (rechargePin.value == rechargePin.value) {
-          alert('card as alredy been used')
-        }
+        // if (rechargePin.value == rechargePin.value) {
+        //   alert('card as alredy been used')
+        // }
      }
     })
 }
