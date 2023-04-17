@@ -82,7 +82,7 @@ function save(){
           <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
       </tr>`       
       })
-
+      
       // to stop random generator number from saving into an array when it is being double clicked
 
       if (displayPin.value == ''){
