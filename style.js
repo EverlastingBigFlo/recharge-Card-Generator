@@ -9,7 +9,7 @@ let amountSelected = document.getElementById('amountSelected')
 let networkSelect = document.getElementById('networkSelect')
 
 let pinGenerated = [];
-
+let rechargePin = document.getElementById('rechargePin')
 
 function getRandomnumber(){
   return Math.floor(Math.random() * 1000000000000);
@@ -26,16 +26,6 @@ function getRandomnumber(){
 
     displayPin.value = getRandomnumber();
 
-
-  let found = pinGenerated.find(function(element){
-    return networkSelect.value==element.networkSelect && amountSelected.value==element.amountSelected && displayPin.value == element.value})
-    
-
-  if (found)
-       {
-          alert('pin already generated')
-          return
-       }
 
       if (networkSelect.value == "MTN") {
         printRef = `*555*${displayPin.value}#`
@@ -77,7 +67,7 @@ function save(){
           <td class="col-1">${element.amount}</td>
           <td class="col-2">${element.pin}</td>
           <td class="col-3">${element.printRef}</td>
-          <td class="col-1"> ${element.status==false?`<span class="text-white">VALID</span>`:`<span class="text-danger">INVALID</span>`}</td>
+          <td class="col-1"> ${element.status==false?`<span class="text-white">UNUSED</span>`:`<span class="text-danger">USED</span>`}</td>
           <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
       </tr>`       
       })
@@ -91,20 +81,18 @@ function del(index){
   save()
 }
 
-function rechargee(){
-    pinGenerated.forEach(load =>{
-      console.log(load);
-      let rechargePin = document.getElementById('rechargePin')
-      console.log(rechargePin.value, 'rechargePin.value');
 
-      if (rechargePin.value === load.printRef) {
-        alert('Yes!!! I am recharged successful');
-        // check if card status is used (true)
-        // if (rechargePin.value == rechargePin.value) {
-        //   alert('card as alredy been used')
-        // }
-     }
-    })
+// to recharge 
+function rechargee(){
+  pinGenerated.forEach(bounce => {
+    if (rechargePin.value === bounce.pinGenerated){
+    alert('Yes!!! I am recharged successful');
+
+    }
+  }); 
 }
+
+
+
 
 
