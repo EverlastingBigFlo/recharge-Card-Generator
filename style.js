@@ -17,8 +17,6 @@ function getRandomnumber(){
 
 // to generate pin
  function generate(){
-  console.log(amountSelected.value);
-  console.log(networkSelect.value);
 
 
     displayPin.value = getRandomnumber();
@@ -29,8 +27,8 @@ function getRandomnumber(){
       alert('you need to fill all inputs')
       return
     }else if (amountSelected.value == 'amountSelect'){
-      alert('please select amount')
       displayPin.value = "";
+      alert('please select amount')
       return
     }
  }
@@ -95,6 +93,7 @@ function save(){
       // to stop random generator number from saving into an array when it is being double clicked
 
       if (displayPin.value == ''){
+        displayPin.value = "";
         alert('you need to generate a pin')
       }
 
@@ -113,28 +112,28 @@ function del(index){
 // to recharge 
 function rechargee(){
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
+
+  // to check if the pin has been loaded
   if (item.status) {
-    alert('the card has alredy been load')
+    alert('uhh!!! sorry my pin has been used by you!')
+    return
+
   }
 
+// to rechatge the pin
   pinGenerated.forEach((base)=> {
     if (base.printRef === rechargePin.value) {
      if (item) {
         // load card
         item.status = true
         display()
-        // alert('Yes!!!! I am recharged fully')
-        // console.log(item);
+        alert('Yes!!!! thank you for recharging me')
 
      }
     }
   })
 
 }
-
-// else if (  pin[i].validity == false && checker.value==pin[i].code ){
-//   seen = true
-//   alert('used')
 
 
 
