@@ -113,6 +113,9 @@ function del(index){
 // to recharge 
 function rechargee(){
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
+  if (item.status) {
+    alert('the card has alredy been load')
+  }
 
   pinGenerated.forEach((base)=> {
     if (base.printRef === rechargePin.value) {
@@ -120,14 +123,18 @@ function rechargee(){
         // load card
         item.status = true
         display()
-
-        console.log(item);
+        // alert('Yes!!!! I am recharged fully')
+        // console.log(item);
 
      }
     }
   })
 
 }
+
+// else if (  pin[i].validity == false && checker.value==pin[i].code ){
+//   seen = true
+//   alert('used')
 
 
 
