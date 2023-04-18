@@ -20,7 +20,6 @@ function getRandomnumber(){
   console.log(amountSelected.value);
   console.log(networkSelect.value);
 
-  let printRef;
 
     displayPin.value = getRandomnumber();
 
@@ -34,18 +33,6 @@ function getRandomnumber(){
       displayPin.value = "";
       return
     }
-
-      // to generate numners based on the network provider
-
-
-
-  // console.log(displayPin.value);
-
-      // pushing contents into an array to save them in the table
-  // let netAmount = {net:networkSelect.value, amount:amountSelected.value, pin:displayPin.value, date:(dd+'/'+mm+'/'+yy), printRef:printRef, status:false};
-
-  // pinGenerated.push(netAmount);
-
  }
 
 
@@ -53,7 +40,7 @@ function getRandomnumber(){
 //  to save pin in the table
 
 function display(){
-  return(
+  document.querySelector('#displayCont').innerHTML = ''
     pinGenerated.forEach(function(element, index){
       document.querySelector('#displayCont').innerHTML += 
        `  
@@ -68,12 +55,11 @@ function display(){
              <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
          </tr>`       
          })
-   
-  )
   
 }
 
 function save(){
+      // to generate numners based on the network provider
 
   let printRef;
 
@@ -111,48 +97,39 @@ function save(){
       if (displayPin.value == ''){
         alert('you need to generate a pin')
       }
-    
-
 
 }
 
+
+
 // to delete pin in the table
 function del(index){
-  pinGenerated.splice(index,1)
-  save()
+  pinGenerated.splice(index,1);
+  display()
+  // save()
 }
 
 
 // to recharge 
 function rechargee(){
-  // pinGenerated.forEach(bounce => {
-  //   if (rechargePin.value === bounce.pinGenerated){
-  //   alert('Yes!!! I am recharged successful');
+  let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
 
-  //   }
-
-
-  //   console.log(bounce);
-  // }); 
-  let  item = pinGenerated.find((elem)=> elem.printRef === rechargePin.value)
-
-  pinGenerated.forEach((elem)=> {
-    if (elem.printRef === rechargePin.value) {
+  pinGenerated.forEach((base)=> {
+    if (base.printRef === rechargePin.value) {
      if (item) {
         // load card
         item.status = true
-        pinGenerated.push(item);
         display()
 
         console.log(item);
 
      }
-    }else{
-      console.log('invalid card');
     }
   })
 
 }
+
+
 
 
 
