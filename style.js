@@ -74,16 +74,11 @@ function save(){
     printRef = `*222*${displayPin.value}#`
   }
 
-
   let netAmount = {net:networkSelect.value, amount:amountSelected.value, pin:displayPin.value, date:(dd+'/'+mm+'/'+yy), printRef:printRef, status:false};
 
   pinGenerated.push(netAmount);
 
-  console.log(pinGenerated, 'yeah m');
-
-
-
-
+  // console.log(pinGenerated, 'yeah m');
 
   document.querySelector('#displayCont').innerHTML = '';
   //  call funct display 
