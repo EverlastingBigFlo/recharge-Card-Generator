@@ -57,6 +57,17 @@ function display(){
 }
 
 function save(){
+
+        // to stop random generator number from saving into an array when it is being double clicked
+
+        if (displayPin.value == ''){
+          alert('you need to generate a pin')
+          document.querySelector('#displayCont').innerHTML = '';
+        return
+        }
+        // to alert when pin is generated
+        alert('Saved Sucessfully. look down to see your pin information')
+        
       // to generate numners based on the network provider
 
   let printRef;
@@ -85,15 +96,7 @@ function save(){
   display()
 
  
-      // to stop random generator number from saving into an array when it is being double clicked
 
-      if (displayPin.value == ''){
-        alert('you need to generate a pin')
-        document.querySelector('#displayCont').innerHTML = '';
-      return
-      }
-      // to alert when pin is generated
-      alert('Saved Sucessfully. look down to see your pin information')
 }
 
 
