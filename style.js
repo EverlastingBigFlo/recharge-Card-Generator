@@ -17,12 +17,8 @@ function getRandomnumber(){
 
 // to generate pin
  function generate(){
-
-
-    displayPin.value = getRandomnumber();
-
     // to stop generating number on empty inputs
-    if (networkSelect.value == "networkSelect" && amountSelected.value == 'amountSelect'){
+    if (networkSelect.value == "networkSelect"){
       displayPin.value = '';
       alert('you need to fill all inputs')
       return
@@ -31,6 +27,10 @@ function getRandomnumber(){
       alert('please select amount')
       return
     }
+
+    displayPin.value = getRandomnumber();
+
+
  }
 
 
@@ -67,7 +67,7 @@ function save(){
         }
         // to alert when pin is generated
         alert('Saved Sucessfully. look down to see your pin information')
-        
+
       // to generate numners based on the network provider
 
   let printRef;
