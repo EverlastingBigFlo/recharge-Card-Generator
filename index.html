@@ -24,10 +24,10 @@
                                         <option id="glo" value="GLO">GLO</option>
                                         <option id="mtn" value="MTN">MTN</option>
                                         <option id="nineMobile" value="9MOBILE">9MOBILE</option>
-                                        <!-- onchange="genNewPin()" -->
-
                                     </select>
                                 </div>
+
+            <!-- Amount Selected Options-->
                                 <div class="py-3">
                                     <h1 class="text-danger fs-4">Select Amount</h1>
                                     <select class="form-select" id="amountSelected" aria-label="Floating label select example">
@@ -39,6 +39,9 @@
                                         <option id="fifty" value="50">50</option>
                                     </select>
                                 </div>
+
+            <!-- to generate pin and save pin in the table-->
+
                                 <div class="pt-4">
                                     <h1 class="fs-3">Generate Pin</h1>
                                     <input type="email" class="form-control" id="displayPin" placeholder="Pin Generating" disabled>
@@ -48,6 +51,8 @@
                                      </div>
                                 </div>
                             </div>
+
+                            <!-- to confirm your generated pin  -->
 
                             <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center">
                                 <div>
@@ -59,11 +64,8 @@
                                     </div>
                                 </div>
                             </div>
-                  
 
-        </div>
-                    
-                    <!-- Modal that pop up when trying to recharge-->
+                     <!-- Modal that pop up when trying to recharge-->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
@@ -78,7 +80,12 @@
                         </div>
                         </div>
                     </div>
+                  
 
+        </div>
+                    
+        
+        <!-- the table to save the generated pin -->
         <section class="py-5 ">
                 <h1 class="d-flex justify-content-center">History</h1>
             <div class="overflow-x-auto">
