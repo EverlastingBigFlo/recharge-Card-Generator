@@ -112,6 +112,10 @@ function save(){
           //  call funct display 
           display()
 
+          if (displayPin.value ==printRef) {
+            alert('already saved')
+          document.querySelector('#displayCont').innerHTML = '';
+          }
  
 
 }
