@@ -53,10 +53,15 @@ function display(){
              <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
          </tr>`       
          })
+
+         localSave= localStorage.setItem('pinGenerated', JSON.stringify(pinGenerated));   
+
   
 }
 
 function save(){
+
+  // save to local Storage
 
         // to stop random generator number from saving into an array when it is being double clicked
 
@@ -106,7 +111,6 @@ function save(){
 function del(index){
   pinGenerated.splice(index,1);
   display()
-  // save()
 }
 
 
