@@ -62,6 +62,19 @@ function display(){
 function save(){
 
   // save to local Storage
+    getData = localStorage.getItem(pinGenerated);
+
+    function storePin(){
+      if (getData){
+        pinGenerated = JSON.parse(getData)
+        display()
+      }
+      else{
+        pinGenerated = pinGenerated
+      }
+    }
+
+    storePin()
 
         // to stop random generator number from saving into an array when it is being double clicked
 
