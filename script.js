@@ -77,7 +77,8 @@ function save(){
         // to stop random generator number from saving into an array when it is being double clicked
 
         if (displayPin.value == ''){
-          alert('you need to generate a pin')
+        // document.querySelector('exampleModalOne')
+          // alert('you need to generate a pin')
           document.querySelector('#displayCont').innerHTML = '';
         return
         }
@@ -106,8 +107,6 @@ function save(){
 
           pinGenerated.push(netAmount);
 
-          // console.log(pinGenerated, 'yeah m');
-
           document.querySelector('#displayCont').innerHTML = '';
           //  call funct display 
           display()
@@ -120,7 +119,7 @@ function save(){
 
 }
 
-
+display()
 
 // to delete pin in the table
 function del(index){

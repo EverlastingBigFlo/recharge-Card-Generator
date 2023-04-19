@@ -48,9 +48,8 @@
                                     <input type="email" class="form-control" id="displayPin" placeholder="Pin Generating" disabled>
                                     <div class="col-6">
                                         <button class="btn btn-primary my-4 p-2 mx-auto" onclick="generate()">Generate pin</button>
-                                        <button type="button" class="btn btn-warning my-4 p-2 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModalOne"onclick="save()">Save pin</button>
+                                        <button type="button" class="btn btn-warning my-4 p-2 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModalOne" onclick="save()">Save pin</button>
                                      </div>
-                                     <!-- Button trigger modal -->
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModalOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
@@ -62,6 +61,18 @@
                                             </div>
                                             </div>
                                         </div>
+                                </div>
+
+                                 <!-- Modal -->
+                                 <div class="modal fade" id="exampleModalOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body">you need to fill all inputs</div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
 
