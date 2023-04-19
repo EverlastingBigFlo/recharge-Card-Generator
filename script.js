@@ -54,28 +54,26 @@ function display(){
          </tr>`       
          })
 
-         localSave= localStorage.setItem('pinGenerated', JSON.stringify(pinGenerated));   
+         localSave= localStorage.setItem('pinGen', JSON.stringify(pinGenerated));   
 
   
 }
+// save to local Storage
+getData = localStorage.getItem('pinGen');
+
+function storePin(){
+  if (getData){
+    pinGenerated = JSON.parse(getData)
+    display()
+  }
+  // else{
+  //   pinGenerated = pinGenerated
+  // }
+}
+
+storePin()
 
 function save(){
-
-  // save to local Storage
-    getData = localStorage.getItem(pinGenerated);
-
-    function storePin(){
-      if (getData){
-        pinGenerated = JSON.parse(getData)
-        display()
-      }
-      else{
-        pinGenerated = pinGenerated
-      }
-    }
-
-    storePin()
-
         // to stop random generator number from saving into an array when it is being double clicked
 
         if (displayPin.value == ''){
@@ -89,30 +87,30 @@ function save(){
 
       // to generate numners based on the network provider
 
-  let printRef;
+          let printRef;
 
-  if (networkSelect.value == "MTN") {
-    printRef = `*555*${displayPin.value}#`
-  }
-  if (networkSelect.value == "AIRTEL") {
-    printRef = `*126*${displayPin.value}#`
-  }
-  if (networkSelect.value == "GLO") {
-    printRef = `*123*${displayPin.value}#`
-  }
-  if (networkSelect.value == "9MOBILE") {
-    printRef = `*222*${displayPin.value}#`
-  }
+          if (networkSelect.value == "MTN") {
+            printRef = `*555*${displayPin.value}#`
+          }
+          if (networkSelect.value == "AIRTEL") {
+            printRef = `*126*${displayPin.value}#`
+          }
+          if (networkSelect.value == "GLO") {
+            printRef = `*123*${displayPin.value}#`
+          }
+          if (networkSelect.value == "9MOBILE") {
+            printRef = `*222*${displayPin.value}#`
+          }
 
-  let netAmount = {net:networkSelect.value, amount:amountSelected.value, pin:displayPin.value, date:(dd+'/'+mm+'/'+yy), printRef:printRef, status:false};
+          let netAmount = {net:networkSelect.value, amount:amountSelected.value, pin:displayPin.value, date:(dd+'/'+mm+'/'+yy), printRef:printRef, status:false};
 
-  pinGenerated.push(netAmount);
+          pinGenerated.push(netAmount);
 
-  // console.log(pinGenerated, 'yeah m');
+          // console.log(pinGenerated, 'yeah m');
 
-  document.querySelector('#displayCont').innerHTML = '';
-  //  call funct display 
-  display()
+          document.querySelector('#displayCont').innerHTML = '';
+          //  call funct display 
+          display()
 
  
 
@@ -148,11 +146,7 @@ function rechargee(){
         display()
         // document.getElementById('exampleModal')
         alert('Yes!!!! thank you for recharging me')
-
      }
-    //  else{
-    //   alert('invalid pin')
-    //  }
      }
   })
 
