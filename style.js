@@ -66,7 +66,8 @@ function save(){
         return
         }
         // to alert when pin is generated
-        alert('Saved Sucessfully. look down to see your pin information')
+        document.getElementById('exampleModalOne')
+
 
       // to generate numners based on the network provider
 
@@ -116,8 +117,7 @@ function rechargee(){
   // to check if the pin has been loaded
   if (item.status) {
     alert('uhh!!! sorry my pin has been used by you!')
-    return
-
+    // return
   }
 
 // to rechatge the pin
@@ -127,7 +127,9 @@ function rechargee(){
         // load card
         item.status = true
         display()
-        alert('Yes!!!! thank you for recharging me')
+        document.getElementById('exampleModal')
+        // return
+        // alert('Yes!!!! thank you for recharging me')
 
      }
     }

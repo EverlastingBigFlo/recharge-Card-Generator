@@ -47,8 +47,20 @@
                                     <input type="email" class="form-control" id="displayPin" placeholder="Pin Generating" disabled>
                                     <div class="col-6">
                                         <button class="btn btn-primary my-4 p-2 mx-auto" onclick="generate()">Generate pin</button>
-                                        <button class="btn btn-warning my-4 p-2 mx-auto" onclick="save()">Save pin</button>
+                                        <button type="button" class="btn btn-warning my-4 p-2 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModalOne"onclick="save()">Save pin</button>
                                      </div>
+                                     <!-- Button trigger modal -->
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body">Saved Sucessfully.</div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
 
@@ -60,22 +72,21 @@
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" id="rechargePin" placeholder="name@example.com">
                                         <label for="floatingInput" id="rechargePin">PIN</label>
-                                        <button class="btn btn-success px-4 my-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Recharge Card</button>
+                                        <button class="btn btn-success px-4 my-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="rechargee()">Recharge Card</button>
                                     </div>
                                 </div>
                             </div>
 
                      <!-- Modal that pop up when trying to recharge-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
+                    <div class="modal fade bg-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content bg-success">
                             <div class="modal-header">
-                            <h1 class="modal-title fs-5 d-flex mx-auto" id="exampleModalLabel">Warning???</h1>
+                            <h1 class="modal-title  d-flex mx-auto" id="exampleModalLabel">SUCCESS</h1>
                             </div>
-                            <div class="modal-body d-flex mx-auto fs-4 fw-bold text-danger">ARE SURE YOU WANT TO RECHARGE??</div>
+                            <div class="modal-body d-flex mx-auto fs-4 fw-bold text-white">Yes!!!! Thank you for recharging me.</div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,Dismiss</button>
-                            <button type="button" class="btn btn-primary" onclick="rechargee()" data-bs-dismiss="modal">Yes Please!</button>
+                            <button type="button" class="btn btn-secondary outline" data-bs-dismiss="modal">Dismiss</button>
                             </div>
                         </div>
                         </div>
