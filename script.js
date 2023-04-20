@@ -144,10 +144,11 @@ display()
   }
 
 
-// to recharge 
+// function to recharge the pin  generated
 function rechargee(){
   scroll(0,0)
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
+  // to check if invalid pin is being inputed
   if (!item) {
     displayModal('invalid pin!', false)
 
