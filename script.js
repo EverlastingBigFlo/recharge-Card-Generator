@@ -33,10 +33,22 @@ function getRandomnumber(){
 
  }
 
- function displayModal(message){
+ function displayModal(message, status){
+  modalBox.style.display = 'flex'
+  if (status) {
+    modaText.style.border = '3px solid green'
+  }else{
+    modaText.style.border = '3px solid red'
+  }
   return(
-    `<div class='modal'></div>`
+    modaText.innerHTML= message
   )
+  
+ }
+
+ function setBackDropToHidden(){
+  modalBox.style.display = 'none'
+
  }
 
 
@@ -48,7 +60,7 @@ function display(){
     pinGenerated.forEach(function(element, index){
       document.querySelector('#displayCont').innerHTML += 
        `  
-       <tr class="bg-danger">
+       <tr class="bg-danger flow overflow-scroll">
              <td class="col-1">${index+1}</td>
              <td class="col-2">${element.net}</td>
              <td class="col-1">${element.date}</td>
@@ -82,7 +94,7 @@ function save(){
         if (displayPin.value == ''){
         // document.querySelector('exampleModalOne')
           // alert('you need to generate a pin')
-          document.querySelector('#displayCont').innerHTML = '';
+          // document.querySelector('#displayCont').innerHTML = '';
         return
         }
         // to alert when pin is generated
@@ -115,6 +127,7 @@ function save(){
           display()
 
           if (displayPin.value ==printRef) {
+            // displayModal('already saved')
             alert('already saved')
           document.querySelector('#displayCont').innerHTML = '';
           }
@@ -125,33 +138,40 @@ function save(){
 display()
 
 // to delete pin in the table
-function del(index){
-  pinGenerated.splice(index,1);
-  display()
-}
+  function del(index){
+    pinGenerated.splice(index,1);
+    displayModal('delete success', true)
+    display()
+  }
 
 
 // to recharge 
 function rechargee(){
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
-  
+  if (!item) {
+    displayModal('invalid pin!', false)
+
+  }
 
   // to check if the pin has been loaded
   if (item.status) {
-    alert('uhh!!! sorry my pin has been used by you!')
+    displayModal('uhh!!! sorry my pin has been used by you!', false)
+    // alert('uhh!!! sorry my pin has been used by you!')
     return
   }
 
 // to rechatge the pin
   pinGenerated.forEach((base)=> {
-
+    console.log(base);
       if (base.printRef === rechargePin.value) {
      if (item) {
         // load card
         item.status = true
         display()
         // document.getElementById('exampleModal')
-        alert('Yes!!!! thank you for recharging me')
+        displayModal('Yes!!!! thank you for recharging me', true)
+
+        // alert('Yes!!!! thank you for recharging me')
      }
      }
   })
