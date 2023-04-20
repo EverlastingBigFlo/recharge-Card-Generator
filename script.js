@@ -156,22 +156,17 @@ function rechargee(){
   // to check if the pin has been loaded
   if (item.status) {
     displayModal('uhh!!! sorry my pin has been used by you!', false)
-    // alert('uhh!!! sorry my pin has been used by you!')
     return
   }
 
 // to rechatge the pin
   pinGenerated.forEach((base)=> {
-    console.log(base);
       if (base.printRef === rechargePin.value) {
      if (item) {
         // load card
         item.status = true
         display()
-        // document.getElementById('exampleModal')
         displayModal('Yes!!!! thank you for recharging me', true)
-
-        // alert('Yes!!!! thank you for recharging me')
      }
      }
   })
