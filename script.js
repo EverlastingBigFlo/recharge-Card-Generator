@@ -34,6 +34,8 @@ function getRandomnumber(){
  }
 
  function displayModal(message, status){
+  scroll(0,0)
+
   modalBox.style.display = 'flex'
   if (status) {
     modaText.style.border = '3px solid green'
@@ -126,9 +128,8 @@ function save(){
           display()
 
           if (displayPin.value ==printRef) {
-            // displayModal('already saved')
-            alert('already saved')
-          document.querySelector('#displayCont').innerHTML = '';
+            displayModal('already saved', false)
+            document.querySelector('#displayCont').innerHTML = '';
           }
  
 
@@ -136,17 +137,18 @@ function save(){
 
 display()
 
+
 // to delete pin in the table
   function del(index){
+
     pinGenerated.splice(index,1);
-    displayModal('delete success', true)
+    displayModal('Delete successfully', true)
     display()
   }
 
 
 // function to recharge the pin  generated
 function rechargee(){
-  scroll(0,0)
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
   // to check if invalid pin is being inputed
   if (!item) {
