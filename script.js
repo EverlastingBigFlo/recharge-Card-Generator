@@ -33,6 +33,12 @@ function getRandomnumber(){
 
  }
 
+ function displayModal(message){
+  return(
+    `<div class='modal'></div>`
+  )
+ }
+
 
 
 //  to save pin in the table
@@ -54,7 +60,7 @@ function display(){
          </tr>`       
          })
 
-         localSave= localStorage.setItem('pinGen', JSON.stringify(pinGenerated));   
+         localSave = localStorage.setItem('pinGen', JSON.stringify(pinGenerated));   
 
   
 }
@@ -66,9 +72,6 @@ function storePin(){
     pinGenerated = JSON.parse(getData)
     display()
   }
-  // else{
-  //   pinGenerated = pinGenerated
-  // }
 }
 
 storePin()
