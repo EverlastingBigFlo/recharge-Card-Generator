@@ -74,32 +74,7 @@
                                         <button class="btn btn-primary my-4 p-2 mx-auto" onclick="generate()">Generate pin</button>
                                         <button type="button" class="btn btn-warning my-4 p-2 mx-auto" onclick="save()">Save pin</button>
                                      </div>
-
-
-                                        <!-- Modal -->
-                                        <!-- <div class="modal fade" id="exampleModalOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-body">Saved Sucessfully.</div>
-                                                <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div> -->
                                 </div>
-
-                                 <!-- Modal -->
-                                 <!-- <div class="modal fade" id="exampleModalOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-body">you need to fill all inputs</div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div> -->
                             </div>
 
                             <div class="backDrop" id="modalBox" onclick="setBackDropToHidden()">
@@ -118,22 +93,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                     <!-- Modal that pop up when trying to recharge-->
-                     <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                    <!-- <div class="modal fade bg-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content bg-success">
-                            <div class="modal-header">
-                            <h1 class="modal-title  d-flex mx-auto" id="exampleModalLabel">SUCCESS</h1>
-                            </div>
-                            <div class="modal-body d-flex mx-auto fs-4 fw-bold text-white">Yes!!!! Thank you for recharging me.</div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary outline" data-bs-dismiss="modal">Dismiss</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div> -->
                   
 
         </div>
@@ -156,8 +115,8 @@
                         <th scope="col">Delete</th>
                       </tr>
                     </thead>
-                    <tbody id="displayCont">
-
+                    <tbody id="displayCont" class="flow overflow-scroll bg-primary">
+                        
                     </tbody>
                   </table>
             </div>

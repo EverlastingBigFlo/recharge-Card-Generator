@@ -60,7 +60,6 @@ function display(){
     pinGenerated.forEach(function(element, index){
       document.querySelector('#displayCont').innerHTML += 
        `  
-       <tr class="bg-danger flow overflow-scroll">
              <td class="col-1">${index+1}</td>
              <td class="col-2">${element.net}</td>
              <td class="col-1">${element.date}</td>
@@ -68,8 +67,8 @@ function display(){
              <td class="col-2">${element.pin}</td>
              <td class="col-3">${element.printRef}</td>
              <td class="col-1"> ${element.status ? 'Used' : "unused" }</td>
-             <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>
-         </tr>`       
+             <td><button class="btn text-white col-1" onclick="del(${index})">Delete</button></td>`
+        
          })
 
          localSave = localStorage.setItem('pinGen', JSON.stringify(pinGenerated));   
@@ -147,6 +146,7 @@ display()
 
 // to recharge 
 function rechargee(){
+  scroll(0,0)
   let  item = pinGenerated.find((base)=> base.printRef === rechargePin.value)
   if (!item) {
     displayModal('invalid pin!', false)
