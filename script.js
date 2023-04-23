@@ -107,11 +107,11 @@ function save(){
         displayModal('Saved Successfully', true)
       }
       // check if display is the same as the printRef
-    if (displayPin.value == document.querySelector('#displayCont').innerHTML+printRef) {
-            displayModal('already saved', false)
-            document.querySelector('#displayCont').innerHTML = '';
-            return
-          }
+    // if (displayPin.value == document.querySelector('#displayCont').innerHTML+printRef) {
+    //         displayModal('already saved', false)
+    //         document.querySelector('#displayCont').innerHTML = '';
+    //         return
+    //       }
 
       // to generate numners based on the network provider
 
