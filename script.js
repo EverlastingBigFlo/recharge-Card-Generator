@@ -103,8 +103,15 @@ function save(){
         return
         }
         // to alert when pin is generated
-        displayModal('Saved Successfully')
-
+      else{
+        displayModal('Saved Successfully', true)
+      }
+      // check if display is the same as the printRef
+    if (displayPin.value == printRef) {
+            displayModal('already saved', false)
+            document.querySelector('#displayCont').innerHTML = '';
+            return
+          }
 
       // to generate numners based on the network provider
 
@@ -131,10 +138,7 @@ function save(){
           //  call funct display 
           display()
 
-          if (displayPin.value ==printRef) {
-            displayModal('already saved', false)
-            document.querySelector('#displayCont').innerHTML = '';
-          }
+      
  
 
 }
