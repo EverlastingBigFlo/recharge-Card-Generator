@@ -107,7 +107,7 @@ function save(){
         displayModal('Saved Successfully', true)
       }
       // check if display is the same as the printRef
-    if (displayPin.value == printRef) {
+    if (displayPin.value == document.querySelector('#displayCont').innerHTML+printRef) {
             displayModal('already saved', false)
             document.querySelector('#displayCont').innerHTML = '';
             return
@@ -120,13 +120,13 @@ function save(){
           if (networkSelect.value == "MTN") {
             printRef = `*555*${displayPin.value}#`
           }
-          if (networkSelect.value == "AIRTEL") {
+          else if (networkSelect.value == "AIRTEL") {
             printRef = `*126*${displayPin.value}#`
           }
-          if (networkSelect.value == "GLO") {
+          else if (networkSelect.value == "GLO") {
             printRef = `*123*${displayPin.value}#`
           }
-          if (networkSelect.value == "9MOBILE") {
+          else if (networkSelect.value == "9MOBILE") {
             printRef = `*222*${displayPin.value}#`
           }
 
