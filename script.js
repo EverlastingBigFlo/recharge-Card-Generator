@@ -99,13 +99,11 @@ function save(){
         // to stop random generator number from saving into an array when it is being double clicked
 
         if (displayPin.value == ''){
-        // document.querySelector('exampleModalOne')
-          // alert('you need to generate a pin')
-          // document.querySelector('#displayCont').innerHTML = '';
+          displayModal('you need to generate a pin first', false)
         return
         }
         // to alert when pin is generated
-        document.getElementById('exampleModalOne')
+        displayModal('Saved Successfully')
 
 
       // to generate numners based on the network provider
