@@ -39,8 +39,12 @@ function getRandomnumber(){
   modalBox.style.display = 'flex'
   if (status) {
     modaText.style.border = '3px solid green'
+    modaText.style.background = 'green'
+
   }else{
     modaText.style.border = '3px solid red'
+    modaText.style.background = 'red'
+
   }
   return(
     modaText.innerHTML= message
