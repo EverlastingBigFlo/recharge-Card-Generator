@@ -43,6 +43,7 @@ function getRandomnumber(){
 
   }else{
     modaText.style.border = '3px solid red'
+    modaText.style.text = 'white'
     modaText.style.background = 'red'
 
   }
