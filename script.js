@@ -20,11 +20,11 @@ function getRandomnumber(){
     // to stop generating number on empty inputs
     if (networkSelect.value == "networkSelect"){
       displayPin.value = '';
-      alert('you need to fill all inputs')
+      displayModal('you need to fill all inputs', false)
       return
     }else if (amountSelected.value == 'amountSelect'){
       displayPin.value = "";
-      alert('please select amount')
+      displayModal('please select amount', false)
       return
     }
 
@@ -37,13 +37,14 @@ function getRandomnumber(){
   scroll(0,0)
 
   modalBox.style.display = 'flex'
+
   if (status) {
     modaText.style.border = '3px solid green'
     modaText.style.background = 'green'
 
   }else{
     modaText.style.border = '3px solid red'
-    modaText.style.text = 'white'
+    modaText.style.color = 'white'
     modaText.style.background = 'red'
 
   }
