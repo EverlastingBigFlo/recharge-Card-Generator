@@ -170,7 +170,7 @@ function rechargee(){
     return
   }
 
-// to rechatge the pin
+// to recharge the pin
   pinGenerated.forEach((base)=> {
       if (base.printRef === rechargePin.value) {
      if (item) {
